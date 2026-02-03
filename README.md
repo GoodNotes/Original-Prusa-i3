@@ -1,3 +1,15 @@
+# Ink Robot - Modified Prusa i3 MK3S Models
+
+> **Note:** This repository contains modified models for the ink robot project.
+>
+> **macOS Users:** It is recommended to use a development snapshot of OpenSCAD, as the stable release is incredibly slow. Install via Homebrew:
+> ```
+> brew install --cask openscad@snapshot
+> ```
+> See: https://formulae.brew.sh/cask/openscad@snapshot
+
+---
+
 # Original Prusa i3 MK3S
 
 

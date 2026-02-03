@@ -50,9 +50,6 @@ module x_carriage_base()
         translate([-25,38,11]) rotate([43,0,0]) cube([20,8,8]);
     }
  
-    // upper motor screw block
-    translate([-34,56.8,0]) rotate([0,0,0]) cube([43.5,19.7,8]); 
-     
     // Belt holder base
     translate([-42.5,20,0]) cube([52,16,7]);
      
@@ -95,16 +92,16 @@ module x_carriage_holes()
     translate([-45,52.5,12]) cube([13.5,10,5]); 
     
     // Extruder mounting holes
-    translate([-7,15.5,-1])cylinder(r=1.65, h=20, $fn=25);
-    translate([-27,15.5,-1])cylinder(r=1.65, h=20, $fn=25);
+    //translate([-7,15.5,-1])cylinder(r=1.65, h=20, $fn=25);
+    //translate([-27,15.5,-1])cylinder(r=1.65, h=20, $fn=25);
 
-    translate([-7,15.5,-1])cylinder(r2=1.65, r1=2.2,h=2, $fn=25);
-    translate([-27,15.5,-1])cylinder(r2=1.65, r1=2.2,h=2, $fn=25);
+    //translate([-7,15.5,-1])cylinder(r2=1.65, r1=2.2,h=2, $fn=25);
+    //translate([-27,15.5,-1])cylinder(r2=1.65, r1=2.2,h=2, $fn=25);
         
-    translate([-7,15.5,4])cylinder(r=3.1, h=4, $fn=6);
-    translate([-27,15.5,4])cylinder(r=3.1, h=4, $fn=6);
-    translate([-7,15.5,7])cylinder(r=4, h=30, $fn=6);
-    translate([-27,15.5,7])cylinder(r=3.5, h=30, $fn=6);
+    //translate([-7,15.5,4])cylinder(r=3.1, h=4, $fn=6);
+    //translate([-27,15.5,4])cylinder(r=3.1, h=4, $fn=6);
+    //translate([-7,15.5,7])cylinder(r=4, h=30, $fn=6);
+    //translate([-27,15.5,7])cylinder(r=3.5, h=30, $fn=6);
     
     
         
@@ -199,17 +196,6 @@ module final_cutout()
         translate([7.8,10,8]) rotate([0,85,0]) cube([15,25,10]);    
     }
         
-        
-        
-    // filament hole
-    difference () 
-    {
-        union() 
-        {
-        translate([-14.199,9.05,0]) rotate([-5,0,22.5]) cylinder(r=1.62, h=40, $fn=8);    
-        translate([-14.5,9.7,8]) rotate([-5,0,22.5]) cylinder(r=1.62,r2=3, h=8, $fn=8);  
-        }
-    }
     
     // bottom back mounting screws
     translate([-22,-11,4]) cylinder(r=1.65, h=20, $fn=50); 
@@ -227,7 +213,6 @@ module final_cutout()
     translate([-24.8,-12.65,10.35]) cube([5.6,3.3,2.1]);
     translate([-23.65,-12.65,10.7]) cube([3.3,3.3,2.1]);
     
-    
     // x-carriage-back mounting screws
     translate([-4,56,0]) cylinder(r=1.7, h=40, $fn=50);  
     translate([-27.5,56,0]) cylinder(r=1.7, h=40, $fn=50);  
@@ -239,13 +224,6 @@ module final_cutout()
     translate([-5.65,54.35,8.7]) cube([3.3,3.3,2]);
     translate([-30.3,54.35,8.35]) cube([5.6,3.3,2]);
     translate([-29.15,54.35,8.7]) cube([3.3,3.3,2]);
-    
-    
-    
-    // center mounting screw
-    translate([-16,29,0]) cylinder(r=1.65, h=40, $fn=50);
-    translate([-18.8,26,10.5]) cube([5.6,12,2.1]); 
-    translate([-21,33,11]) cube([10,8,6]);
     
     // better printing bridges
     translate([-18.8,27.35,10.9]) cube([5.6,3.3,2.1]);
@@ -311,17 +289,6 @@ module x_carriage()
     {
             x_carriage_block();
             
-            // upper motor screw
-            translate([2.5,67.5,-50]) cylinder(r=1.8, h=100, $fn=30);
-            translate([2.5,67.5,-0.1]) cylinder(r1=2.1,r2=1.8, h=0.5, $fn=25);
-            translate([2.5,67.5,7.5]) cylinder(r=3.2, h=7, $fn=30);
-            
-            translate([-28.5,67.5,7.5])cylinder(r=3.2, h=20, $fn=25);    
-            translate([-28.5,67.5,-1])cylinder(r=1.65, h=20, $fn=25);    
-            translate([-28.5,67.5,-1])cylinder(r2=1.65, r1=3, h=2, $fn=25);    
-        
-            translate([0.5,22.5,0]) rotate([0,90,0]) cylinder(r=5.2, h=7.0, $fn=25);
-
 
             // selective infill
             translate([5,-15.4,-1]) rotate([0,45,0]) cube([0.3,4.6,8]);        
@@ -338,17 +305,6 @@ module x_carriage()
             translate([-40.8,7.5,0]) rotate([0,20,0]) cube([5,3.5,20]);
             translate([-2.9,7.5,18]) rotate([0,80,0]) cube([20,3.55,5]);
             
-            // filament sensor connector
-            translate([-1.5,62,-1.3]) cube([1,5,5]);
-            translate([-3.5,65,-1.3]) cube([3,5,5]);
-            translate([-9,70.6,-1.3]) cube([9,15,15]);
-            translate([-8.5,68,-1.3]) cube([8,15,15]);
-            translate([-0.7,67.5,7.5]) cube([3.2,3.2,1]);
-            difference()
-                {
-                translate([-9,69,-1]) cube([8.5,6,7]);
-                translate([-9,77,2]) rotate([45,0,0]) cube([8.5,6,7]);
-                }
             
             // filament sensor cable
             difference()
