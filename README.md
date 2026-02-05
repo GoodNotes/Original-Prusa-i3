@@ -1,12 +1,64 @@
 # Ink Robot - Modified Prusa i3 MK3S Models
 
 > **Note:** This repository contains modified models for the ink robot project.
->
-> **macOS Users:** It is recommended to use a development snapshot of OpenSCAD, as the stable release is incredibly slow. Install via Homebrew:
-> ```
-> brew install --cask openscad@snapshot
-> ```
-> See: https://formulae.brew.sh/cask/openscad@snapshot
+
+## Prerequisites
+
+**OpenSCAD** is required to generate STL files from the SCAD source files.
+
+**macOS:**
+```bash
+# Recommended: development snapshot (much faster than stable release)
+brew install --cask openscad@snapshot
+
+# Alternative: stable release
+brew install --cask openscad
+```
+See: https://formulae.brew.sh/cask/openscad@snapshot
+
+**Linux (Debian/Ubuntu):**
+```bash
+sudo apt install openscad
+```
+
+**Windows:**
+Download from https://openscad.org/downloads.html
+
+## Building STL Files
+
+After modifying SCAD files, regenerate the STL files using one of these methods:
+
+### Using Make (Recommended)
+
+```bash
+# Build all STL files
+make
+
+# Build a specific STL file
+make Printed-Parts/STL/x-carriage.stl
+
+# Clean generated files
+make clean
+
+# List available targets
+make help
+```
+
+### Using the Shell Script
+
+```bash
+cd Printed-Parts
+
+# Build all STL files
+./generate-stls.sh
+
+# Build a specific file
+./generate-stls.sh x-carriage.scad
+```
+
+### Manual Generation
+
+Open the SCAD file in OpenSCAD and use **File > Export > Export as STL**.
 
 ---
 
