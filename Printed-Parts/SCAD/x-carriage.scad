@@ -224,6 +224,11 @@ module final_cutout()
     translate([-5.65,54.35,8.7]) cube([3.3,3.3,2]);
     translate([-30.3,54.35,8.35]) cube([5.6,3.3,2]);
     translate([-29.15,54.35,8.7]) cube([3.3,3.3,2]);
+
+    // center mounting screw (M3 + M3n nut)
+    translate([-16,29,0]) cylinder(r=1.65, h=40, $fn=50);
+    translate([-18.8,26,10.5]) cube([5.6,12,2.1]);
+    translate([-21,33,11]) cube([10,8,6]);
     
     // better printing bridges
     translate([-18.8,27.35,10.9]) cube([5.6,3.3,2.1]);
