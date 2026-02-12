@@ -195,6 +195,10 @@ module final_cutout()
         }
         translate([7.8,10,8]) rotate([0,85,0]) cube([15,25,10]);    
     }
+
+    // nylon filament / cable tie hole (restored from history)
+    translate([-14.199,9.05,0]) rotate([-5,0,22.5]) cylinder(r=1.62, h=40, $fn=8);
+    translate([-14.5,9.7,8]) rotate([-5,0,22.5]) cylinder(r1=1.62, r2=3, h=8, $fn=8);
         
     
     // bottom back mounting screws
@@ -218,6 +222,14 @@ module final_cutout()
     translate([-27.5,56,0]) cylinder(r=1.7, h=40, $fn=50);  
     translate([-30.3,53,8]) cube([5.6,8,2]);
     translate([-6.8,53,8]) cube([5.6,8,2]);
+
+    // top cable cutout (6.1mm cable) - slot-in from above
+    top_cable_d = 6.1;
+    top_cable_clearance = 0.4;
+    top_cable_r = (top_cable_d + top_cable_clearance) / 2;
+    top_cable_wall = 0.2;
+    top_cable_edge_y = 62.0;
+    translate([-16,top_cable_edge_y - top_cable_r - top_cable_wall,-5]) cylinder(r=top_cable_r, h=60, $fn=50);
     
     // better printing bridges
     translate([-6.8,54.35,8.35]) cube([5.6,3.3,2]);

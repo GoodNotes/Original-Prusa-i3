@@ -169,6 +169,15 @@ module x_carriage_back()
 				// version
         translate([-12,-29,22.6]) rotate([0,0,0]) linear_extrude(height = 0.6) 
         { text("R7",font = "helvetica:style=Bold", size=4, center=true); }
+
+        // top cable cutout (6.1mm cable) - slot-in from above
+        top_cable_d = 6.1;
+        top_cable_clearance = 0.4;
+        top_cable_r = (top_cable_d + top_cable_clearance) / 2;
+        top_cable_overlap = 0.4; // ensure it breaks the top edge (open slot)
+        top_cable_edge_y = 36.5;
+        top_cable_center_x = 0.5; // part's X midpoint (after final 180deg Y-rotation this becomes slightly negative)
+        translate([top_cable_center_x,top_cable_edge_y - top_cable_r + top_cable_overlap,0]) cylinder(h=60, r=top_cable_r, $fn=50);
         
 
     }
@@ -176,3 +185,4 @@ module x_carriage_back()
 
 rotate([0,180,0]) x_carriage_back();
 
+ 
